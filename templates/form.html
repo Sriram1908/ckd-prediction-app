@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CKD Prediction Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      background-color: #d1fcd7;
+    }
+    select, input[type=number] {
+      background-color: white;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #1e40af;
+    }
+    button:hover {
+      background-color: #1c3faa;
+    }
+    .red-accent {
+      color: #dc2626;
+    }
+  </style>
+</head>
+
+<body class="p-8 font-sans text-gray-800">
+    <!-- Logo + Heading -->
+<div class="flex items-center justify-between mb-10">
+  <!-- Logo aligned to left -->
+  <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="w-20 h-20">
+
+  <!-- Title aligned to center -->
+  <h2 class="text-3xl font-bold text-blue-700 text-center w-full">
+  </h2>
+</div>
+
+
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-10 text-center text-blue-700">🧪 <i class="fas fa-notes-medical"></i> CKD Health Information Form</h2>
+
+<form action="/predict" method="POST" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+  <!-- 1–5: Numeric -->
+  <div><label>Age</label><input name="age" type="number" step="any" required></div>
+  <div><label>Blood Pressure</label><input name="bp" type="number" step="any" required></div>
+  <div><label>Specific Gravity</label><input name="sg" type="number" step="any" required></div>
+  <div><label>Albumin</label><input name="al" type="number" step="any" required></div>
+  <div><label>Sugar</label><input name="su" type="number" step="any" required></div>
+
+  <!-- 6–9: Encoded Categorical -->
+  <div><label>RBC (0=Normal, 1=Abnormal)</label><select name="rbc"><option value="0">0</option><option value="1">1</option></select></div>
+  <div><label>PC (0=Normal, 1=Abnormal)</label><select name="pc"><option value="0">0</option><option value="1">1</option></select></div>
+  <div><label>PCC (0=Present, 1=Not Present)</label><select name="pcc"><option value="0">0</option><option value="1">1</option></select></div>
+  <div><label>BA (0=Present, 1=Not Present)</label><select name="ba"><option value="0">0</option><option value="1">1</option></select></div>
+
+  <!-- 10–14: Numeric -->
+  <div><label>Blood Glucose</label><input name="bgr" type="number" step="any" required></div>
+  <div><label>Blood Urea</label><input name="bu" type="number" step="any" required></div>
+  <div><label>Serum Creatinine</label><input name="sc" type="number" step="any" required></div>
+  <div><label>Sodium</label><input name="sod" type="number" step="any" required></div>
+  <div><label>Potassium</label><input name="pot" type="number" step="any" required></div>
+
+  <!-- 15–18: Numeric -->
+  <div><label>Hemoglobin</label><input name="hemo" type="number" step="any" required></div>
+  <div><label>PCV</label><input name="pcv" type="number" step="any" required></div>
+  <div><label>WBC</label><input name="wc" type="number" step="any" required></div>
+  <div><label>RBC Count</label><input name="rc" type="number" step="any" required></div>
+
+  <!-- 19–24: Encoded Categorical -->
+  <div><label>Hypertension (0=Yes, 1=No)</label><select name="htn"><option value="0">0</option><option value="1">1</option></select></div>
+  <div><label>Diabetes (0=Yes, 1=No)</label><select name="dm"><option value="0">0</option><option value="1">1</option></select></div>
+  <div><label>CAD (0=Yes, 1=No)</label><select name="cad"><option value="0">0</option><option value="1">1</option></select></div>
+  <div><label>Appetite (0=Good, 1=Poor)</label><select name="appet"><option value="0">0</option><option value="1">1</option></select></div>
+  <div><label>Pedal Edema (0=Yes, 1=No)</label><select name="pe"><option value="0">0</option><option value="1">1</option></select></div>
+  <div><label>Anemia (0=Yes, 1=No)</label><select name="ane"><option value="0">0</option><option value="1">1</option></select></div>
+
+  <!-- Submit -->
+  <div class="col-span-full flex justify-center mt-8">
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 px-8 py-3 rounded-full text-lg shadow-md transition">
+      🔍 Predict CKD Risk
+    </button>
+  </div>
+
+</form>
+
+  </div>
+</body>
+</html>

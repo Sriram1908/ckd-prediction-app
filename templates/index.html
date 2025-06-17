@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CKD Prediction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.png') }}">
+
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+
+  <style>
+    .landing {
+      background-image: url('/static/ckd_bg.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-green-50">
+
+  <!-- Header with Logo -->
+  <header class="flex items-center justify-between p-4 bg-white shadow-md sticky top-0 z-50">
+    <div class="flex items-center">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="CKD AI Logo" class="h-12 w-auto mr-4">
+      <h1 class="text-2xl font-bold text-green-700">CKD Prediction</h1>
+    </div>
+  </header>
+
+  <!-- ✅ Landing Section -->
+  <div class="landing flex flex-col items-center justify-center relative">
+    <div class="absolute top-12 left-12 bg-white bg-opacity-60 px-6 py-4 rounded-xl shadow-lg">
+      <p class="text-green-800 text-lg font-semibold">"Early detection is the key to healthier kidneys."</p>
+    </div>
+
+    <div class="bg-black bg-opacity-40 p-10 rounded-xl text-center">
+      <button onclick="window.location.href='/form';"
+              class="bg-green-500 hover:bg-green-600 text-white text-xl px-6 py-3 rounded-full shadow-lg transition-all duration-300">
+        Check Your Health
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="bg-gray-900 text-white py-4 px-8 flex justify-between items-center text-sm">
+    <div>
+      © 2025 CKD Prediction | AI Health Initiative
+    </div>
+    <div>
+      Contact: info@ckd-ai.com
+    </div>
+  </footer>
+
+</body>
+</html>
