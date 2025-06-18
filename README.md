@@ -1,43 +1,67 @@
-# CKD Prediction Web App
+# 🩺 CKD Prediction Web App
 
-A simple Flask web application that predicts Chronic Kidney Disease (CKD) based on 24 user-input medical parameters.
+A simple Flask web application that predicts **Chronic Kidney Disease (CKD)** based on 24 medical input parameters.
+
+---
 
 ## 🔍 Project Overview
-This project uses a trained SVM classifier to detect the likelihood of CKD. Users input their medical data, and the app predicts the result.
+
+This project utilizes a trained **SVM (Support Vector Machine)** model to assess the likelihood of CKD. Users provide their medical details through a web form, and the app instantly returns a prediction.
+
+---
 
 ## 🛠️ Tech Stack
-- Python
-- Flask
-- Scikit-learn
-- HTML/CSS
-- Git/GitHub
+
+- 🐍 Python  
+- ⚙️ Flask  
+- 📊 Scikit-learn  
+- 🌐 HTML/CSS  
+- 🧪 Jupyter Notebook  
+- 🗃️ Git & GitHub  
+
+---
 
 ## 📁 Project Structure
-app.py
-templates/
-static/
-svm_classifier_pipeline.pkl
-requirements.txt
-ScreenShots/
-README.md
+
+CKD_Deployment/
+│
+├── app.py # Flask backend
+├── svm_classifier_pipeline.pkl # Trained ML model
+├── requirements.txt # Dependencies
+├── README.md # Project documentation
+│
+├── templates/ # HTML templates (index.html, result.html)
+├── static/ # Static assets (CSS, images)
+├── ScreenShots/ # Output screenshots
+└── CKD_Model_Training.ipynb # Jupyter notebook for model training
 
 
-## 📷 Output Screenshots
-Screenshots of homepage, prediction inputs, and result page are available in the [ScreenShots](./ScreenShots) folder.
 
-## 🧪 How to Run
-1. Clone this repo
-2. Create virtual environment  
-   `python -m venv venv`
-3. Activate it  
-   `.\venv\Scripts\activate`
-4. Install packages  
-   `pip install -r requirements.txt`
-5. Run the app  
-   `python app.py`
+---
 
-## 📚 Dataset
-Used the CKD dataset from Kaggle or UCI Repository.
+## 🧪 How to Run the Project Locally
 
-## 🙋 Author
-Sriram Y — [GitHub](https://github.com/Sriram1908)
+```bash
+# 1. Clone the repository
+git clone https://github.com/Sriram1908/ckd-prediction-app.git
+cd ckd-prediction-app
+
+# 2. Create and activate virtual environment (Windows)
+python -m venv venv
+.\venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the app
+python app.py
+```
+
+➡️ Open http://127.0.0.1:5000 in your browser to use the web app.
+
+📷 Output Screenshots
+Screenshots of homepage, input form, and result pages are available in the ScreenShots folder.
+
+🙋‍♂️ Author
+Sriram Y
+GitHub: Sriram1908
